@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/contacts"><</ion-back-button>
+  </ion-buttons>
+    <ion-title>Edit ZenContact</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="updateContact()" #addContact="ngForm">
+    <ion-row class="details">
+      <ion-col size="12">
+        <ion-item class="input">
+          <ion-input label="name" name="name" type="text" labelPlacement="floating"
+            [(ngModel)]="contact.name" (ngModelChange)="onInput('name')" required></ion-input>
+          </ion-item>
+          <ion-text class="warning" *ngIf="!isValid.name">name must have at least 5 characters</ion-text>
+        <ion-item class="input">
+          <ion-input label="e-mail" name="email" type="email" labelPlacement="floating"
+            [(ngModel)]="contact.email" (ngModelChange)="onInput('email')" required></ion-input>
+        </ion-item>
+        <ion-text class="warning" *ngIf="!isValid.email">not a proper email</ion-text>
+        <ion-item class="input">
+          <ion-input label="phone" name="phone" type="text" labelPlacement="floating" maxlength="9"
+            [(ngModel)]="contact.phone" (ngModelChange)="onInput('phone')" required></ion-input>
+        </ion-item>
+        <ion-text class="warning" *ngIf="!isValid.phone">phone numbers usually have 9 digits</ion-text>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="12">
+        <ion-button expand="full" type="submit" [disabled]="addContact.invalid || !isValid.name || !isValid.email || !isValid.phone">Save</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

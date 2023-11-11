@@ -1,0 +1,125 @@
+:root {
+  --color-pennblue:#091540;
+  --color-space:#303550;
+  --color-coolgray:#8D909B;
+  --color-lightgray:#BCBDC0;
+  --ion-font-family: Rubik;
+}
+
+//
+//  IONIC TAGS
+//
+ion-content {
+  --background: linear-gradient(to bottom, var(--color-space), var(--color-coolgray));
+}
+
+ion-content.details {
+  margin-left: 20px;
+}
+
+ion-toolbar {
+  --color: var(--color-coolgray);
+  --font-weight: bold;
+  --background: var(--color-pennblue)
+}
+
+ion-header {
+  text-align: center;
+}
+
+ion-card {
+  height: inherit;
+  background-color: var(--color-space);
+  border: 5px;
+  border-radius: 8px;
+  box-shadow: 5px 10px 20px rgba(100, 100, 100, 0.3);;
+  padding: 10px;
+  ion-button {
+    border-radius: 20px;
+    font-size: smaller;
+    font-weight: bolder;
+  }
+}
+
+ion-card-title {
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+ion-card-subtitle {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+ion-item {
+  --background: var(--color-lightgray);
+  --placeholder-color: var(--color-coolgray);
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+ion-item.input {
+  --background: transparent;
+  --color: var(--color-lightgray);
+  --padding-end: 10px;
+  --padding-start: 10px;
+}
+
+ion-button {
+  --background: var(--color-pennblue);
+  --color: var(--color-lightgray);
+  --highlight-color-focused: var(--color-lightgray);
+  --highlight-color-activated: var(--color-lightgray);
+  font-size: small;
+  font-weight: bold;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+//
+//  CLASSES
+//
+.center-container {
+  height: 100%;
+  width: 100%;
+  margin-bottom: 10px;
+  position:relative;
+  justify-content:center;
+  align-items: center;
+}
+
+.zen-logo {
+  width: 150px;
+  height: 150px;
+  margin-top: 100px;
+  margin-bottom: 30px;
+  filter: contrast(150%) brightness(70%) invert(90%);
+}
+
+.login-loader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: transparent;
+  color: var(--color-lightgray);
+  font-weight: bold;
+  ion-spinner {
+    color: var(--color-lightgray);
+    font-weight: bold;
+  }
+}
+
+.details {
+  margin-top: 15px;
+  padding: 10px;
+}
+
+.warning {
+  padding-left: 15px;
+  font-size: small;
+  color: red;
+}

@@ -1,20 +1,41 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" class="ion-text-center">
+        <img src="assets/zen-logo.png" class="zen-logo">
+      </ion-col>
+    </ion-row>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <ion-row>
+        <ion-col size="12">
+          <ion-item class="input">
+            <ion-input placeholder="e-mail" type="e-mail" formControlName="email"></ion-input>
+            <ion-text color="danger" *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)">
+              invalid email
+            </ion-text>
+          </ion-item>
+        </ion-col>
+      </ion-row>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+      <ion-row>
+        <ion-col size="12">
+          <ion-item class="input">
+            <ion-input placeholder="password" type="password" formControlName="password"></ion-input>
+            <ion-text color="danger"
+              *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)">
+              password too short
+            </ion-text>
+          </ion-item>
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col size="12">
+          <ion-button expand="full" type="submit" [disabled]="loginForm.invalid">Login</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+
+  </ion-grid>
 </ion-content>
